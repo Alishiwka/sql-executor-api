@@ -1,3 +1,4 @@
+
 # 🚀 SQL Guard Executor
 
 A secure and robust Node.js REST API designed to safely execute PostgreSQL queries. This project features strict schema validation, "human-friendly" error reporting, and custom security middleware to prevent destructive database operations.
@@ -22,31 +23,47 @@ A secure and robust Node.js REST API designed to safely execute PostgreSQL queri
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Alishiwka/sql-executor-api
+git clone [https://github.com/your-username/sql-guard-executor.git](https://github.com/your-username/sql-guard-executor.git)
 cd sql-guard-executor
-2. Install dependencies
-Bash
-npm install
-3. Setup Environment
-Create a .env file in the root directory:
 
-Plaintext
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+
+```
+
+### 3. Setup Environment
+
+Create a `.env` file in the root directory:
+
+```text
 PORT=3000
-4. Run the server
-Bash
+
+```
+
+### 4. Run the server
+
+```bash
 npm start
-📖 API Reference
-Execute SQL Query
+
+```
+
+## 📖 API Reference
+
+### Execute SQL Query
+
 Connects to a database and runs a validated SELECT query.
 
-URL: /api/execute-sql
+* **URL:** `/api/execute-sql`
+* **Method:** `POST`
+* **Content-Type:** `application/json`
 
-Method: POST
+#### Request Body Example:
 
-Content-Type: application/json
-
-Request Body Example:
-JSON
+```json
 {
   "dbType": "postgres",
   "credentials": {
@@ -58,8 +75,12 @@ JSON
   },
   "query": "SELECT * FROM products"
 }
-Successful Response:
-JSON
+
+```
+
+#### Successful Response:
+
+```json
 {
   "success": true,
   "data": [
@@ -67,18 +88,25 @@ JSON
     { "id": 2, "name": "Banana", "price": 50 }
   ]
 }
-Validation Error Example:
-JSON
+
+```
+
+#### Validation Error Example:
+
+```json
 {
   "success": false,
   "error": "Validation failed!",
   "details": "ValidationError: ✖ User is required at \"credentials.user\"; ✖ Query is too short at \"query\""
 }
-🛡 Security Rules
-To protect your data, the API uses a Read-Only policy. The isValidQuery middleware blocks any request containing:
 
-INSERT, UPDATE, DELETE
+```
 
-DROP, TRUNCATE, ALTER, CREATE
+## 🛡 Security Rules
 
-Attempts to use these commands will result in a 403 Forbidden response.
+To protect your data, the API uses a **Read-Only** policy. The `isValidQuery` middleware blocks any request containing:
+
+* `INSERT`, `UPDATE`, `DELETE`
+* `DROP`, `TRUNCATE`, `ALTER`, `CREATE`
+
+Attempts to use these commands will result in a `403 Forbidden` response.
