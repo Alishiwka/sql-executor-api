@@ -23,7 +23,7 @@ A secure and robust Node.js REST API designed to safely execute PostgreSQL queri
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/your-username/sql-guard-executor.git](https://github.com/your-username/sql-guard-executor.git)
+git clone https://github.com/Alishiwka/sql-executor-api
 cd sql-guard-executor
 
 ```
