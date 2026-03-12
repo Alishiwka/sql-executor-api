@@ -35,16 +35,7 @@ npm install
 
 ```
 
-### 3. Setup Environment
-
-Create a `.env` file in the root directory:
-
-```text
-PORT=3000
-
-```
-
-### 4. Run the server
+### 3. Run the server
 
 ```bash
 npm start
