@@ -1,0 +1,24 @@
+{
+  "name": "expressjs-tutorial",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon ./src/index.mjs",
+    "start": "node ./src/index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.20.0",
+    "pg-promise": "^12.6.1",
+    "router": "^2.2.0",
+    "zod": "^4.3.6",
+    "zod-validation-error": "^5.0.0"
+  },
+  "type": "module"
+}
