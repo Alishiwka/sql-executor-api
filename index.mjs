@@ -16,7 +16,7 @@ app.post("/api/execute-sql", isValidQuery, async (req, res) => {
   const validation = ExecuteSqlSchema.safeParse(req.body);
 
 if (!validation.success) {
-    const pretty = fromError(validation.error).toString()
+    const pretty = fromError(validation.error).details.map((detail) => detail.message);
 
     return res.status(400).json({
       success: false,
